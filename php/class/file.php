@@ -12,6 +12,20 @@ class File{
             fclose($file);
             echo "file created";
             }
-    }
 
+    //function to show files
+    static function showFiles(){
+        //$path = dirname(__DIR__, 2) . "/Storage/";
+        $path = "../Storage/";
+        $items = scandir($path);
+        //print_r($items);
+        //To remove . and .. from array
+        $items = array_diff($items,array(".",".."));
+          //print_r($items);
+         foreach($items as $itm):
+           echo "<a href=$path . $itm >$itm</a>";
+           echo "<br/>";
+          endforeach;
+     }
+    }
 ?>

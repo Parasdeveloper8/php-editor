@@ -10,10 +10,20 @@
     <h1>Editor</h1>
     <fieldset>
     <form action="./php/create.php" method="post">
-    <legend><input type="text" placeholder="file name" name="file-name" required/></legend>
+    <legend>
+        <input type="text" placeholder="file name" name="file-name" required/>
+        <button type="submit" name="sub">Save file</button>
+    </legend>
     <textarea name="content"></textarea>
-    <button type="submit" name="sub">Save file</button>
     </form>
+
+    <!--Fieldset to show saved files-->
+    <fieldset id="showFiles">
+      <form method="post" action="./php/show.php">
+        <button type="submit" name="showFiles">Show Files</button>
+      </form>
+    </fieldset>
+
     </fieldset>
 </body>
 </html>

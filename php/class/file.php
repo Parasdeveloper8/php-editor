@@ -22,10 +22,17 @@ class File{
         //To remove . and .. from array
         $items = array_diff($items,array(".",".."));
           //print_r($items);
+          echo "<fieldset>";
+          echo "<legend>Files</legend>";
+          echo "<ol>";
          foreach($items as $itm):
-           echo "<a href=$path . $itm >$itm</a>";
+          //path to directly go to file
+           $path = "../Storage/$itm";
+           echo "<li><a href=$path>$itm</a></li>";
            echo "<br/>";
           endforeach;
+          echo "</ol>";
+          echo "</fieldset>";
      }
     }
 ?>

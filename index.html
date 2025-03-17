@@ -7,23 +7,43 @@
     <link rel="stylesheet" href="./style/index.css" type="text/css"/>
 </head>
 <body>
-    <h1>Editor</h1>
+    <h1>Test scoreboard</h1>
     <fieldset>
     <form action="./php/create.php" method="post">
+
+    <h2>Enter Test name</h2>
+      <!--Input to enter test name-->
     <legend>
-        <input type="text" placeholder="file name" name="file-name" required/>
-        <button type="submit" name="sub">Save file</button>
+        <input type="text" placeholder="Enter test name" name="file-name" required/>
+        <button type="submit" name="sub">Save detail</button>
     </legend>
-    <textarea name="content"></textarea>
+
+    <!--Table for marks-->
+    <h3>Enter you marks</h3>
+    <table>
+        <tr<td><b>Maths : </b></td><input type="number" name="maths" placeholder="secured marks"/> / <input type="number" name="mathsT" placeholder="total marks"/></tr>
+        <br/>
+        <tr<td><b>English : </b></td><input type="number" name="english" placeholder="secured marks"/> / <input type="number" name="englishT" placeholder="total marks"/></tr>
+        <br/>
+        <tr<td><b>Science : </b></td><input type="number" name="science" placeholder="secured marks"/> / <input type="number" name="scienceT" placeholder="total marks"/></tr>
+        <br/>
+        <tr<td><b>Geography : </b></td><input type="number" name="geography" placeholder="secured marks"/> / <input type="number" name="geographyT" placeholder="total marks"/></tr>
+        <br/>
+        <tr<td><b>Hindi : </b></td><input type="number" name="hindi" placeholder="secured marks"/> / <input type="number" name="hindiT" placeholder="total marks"/></tr>
+        <br/>
+        <tr<td><b>Sanskrit : </b></td><input type="number" name="sanskrit" placeholder="secured marks"/> / <input type="number" name="sanskritT" placeholder="total marks"/></tr>
+        <br/>
+        <tr<td><b>Economics : </b></td><input type="number" name="economics" placeholder="secured marks"/> / <input type="number" name="economicsT" placeholder="total marks"/></tr>
+        <br/>
+        <tr<td><b>History : </b></td><input type="number" name="history" placeholder="secured marks"/> / <input type="number" name="historyT" placeholder="total marks"/></tr>
+        <br/>
+        <tr<td><b>Politics : </b></td><input type="number" name="politics" placeholder="secured marks"/> / <input type="number" name="politicsT" placeholder="total marks"/></tr>
+      </table>
+
+       <!--Field to enter remarks-->
+       <h4>Enter your remarks</h4>
+      <textarea name="remark"></textarea>
     </form>
-
-    <!--Fieldset to show saved files-->
-    <fieldset id="showFiles">
-      <form method="post" action="./php/show.php">
-        <button type="submit" name="showFiles">Show Files</button>
-      </form>
-    </fieldset>
-
     </fieldset>
 </body>
 </html>

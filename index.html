@@ -8,13 +8,21 @@
 </head>
 <body>
     <h1>Test scoreboard</h1>
+
+    <fieldset>
+      <form action="./php/show.php" method="get">
+        <button type="submit" name="show">Show Files</button>
+      </form>
+    </fieldset>
+
     <fieldset>
     <form action="./php/save.php" method="post">
 
     <h2>Enter Test name</h2>
       <!--Input to enter test name-->
     <legend>
-        <input type="text" placeholder="Enter test name" name="test-name" required/>
+        <input type="text" placeholder="Enter_test_name" name="test-name" required/>
+        <strong>Don't add space in test name.Use underscore( _ )</strong>
         <button type="submit" name="sub">Save detail</button>
     </legend>
 

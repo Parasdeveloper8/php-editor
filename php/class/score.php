@@ -38,5 +38,17 @@ class ScoreData{
         echo "file created";
     }
 
+    //static function to show data
+    static function show_Data(){
+        $path = "../Storage/";
+        $items = scandir($path);
+        //To remove . and .. from array
+        $items = array_diff($items,array(".",".."));
+        //print_r($items);
+         foreach($items as $itm):
+         echo "<a href=../Storage/$itm style=text-decoration:none;>$itm</a>";
+         echo "<br/>";
+         endforeach;
+    }
 }
 ?>

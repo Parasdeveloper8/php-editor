@@ -35,6 +35,7 @@ class ScoreData{
         $file = fopen($fileName,"w") or die("unable to create file"); //w = write
         fwrite($file,$content);
         fclose($file);
+        echo "<a href=../index.html>Home</a><br/>";
         echo "file created";
     }
 

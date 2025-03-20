@@ -47,9 +47,22 @@ class ScoreData{
         $items = array_diff($items,array(".",".."));
         //print_r($items);
          foreach($items as $itm):
-         echo "<a href=../Storage/$itm style=text-decoration:none;>$itm</a>";
+         echo("      
+         <fieldset><a href=../Storage/$itm style=text-decoration:none;>$itm</a>
+         <br/>
+         <br/>
+         <form method=post>
+         <button type=submit name=$itm >Delete $itm</button>
+         </form>
+         </fieldset>
+         ");
          echo "<br/>";
          endforeach;
+    }
+
+    //static function to delete data
+    static function delete_Data(){
+
     }
 }
 ?>

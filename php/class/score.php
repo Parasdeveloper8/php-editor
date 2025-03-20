@@ -41,8 +41,13 @@ class ScoreData{
 
     //static function to show data
     static function show_Data(){
+        if(is_dir("../Storage/") && !(new FilesystemIterator("../Storage/"))->valid()){
+            echo "No data";
+            die();
+        }
+      
         $path = "../Storage/";
-        $items = scandir($path);
+        $items = scandir($path); 
         //To remove . and .. from array
         $items = array_diff($items,array(".",".."));
         //print_r($items);
@@ -52,17 +57,26 @@ class ScoreData{
          <br/>
          <br/>
          <form method=post>
-         <button type=submit name=$itm >Delete $itm</button>
+         <button type=submit name=delete>Delete $itm</button>
          </form>
          </fieldset>
          ");
          echo "<br/>";
          endforeach;
+         if(isset($_POST['delete'])){
+            self::delete_Data($itm);
+         }
     }
 
     //static function to delete data
-    static function delete_Data(){
-
+    static function delete_Data($itm){
+        if(file_exists("../Storage/". $itm)){
+            if(unlink("../Storage/$itm")){
+            echo("File deleted successfully");
+            }else{
+                echo "Fail to delete file";
+            }
+        }
     }
 }
 ?>
